@@ -1,0 +1,25 @@
+<header class="relative border-b border-solid border-red-400">
+  <div class="mx-auto flex justify-between">
+    <a class="font-bold" routerLink="/">Food Mine!</a>
+    <nav>
+      <ul class="flex">
+        <li>
+          <a routerLink="/login">Login</a>
+        </li>
+        <li class="relative group">
+          <a routerLink="/dashboard">John</a>
+          <div class="absolute z-50 bg-gray-50 hidden group-hover:block">
+            <a class="w-full min-w-32" routerLink="/profile">Profile</a>
+            <a class="w-full min-w-32" routerLink="/orders">Orders</a>
+            <a class="w-full min-w-32">Logout</a>
+          </div>
+        </li>
+        <li>
+          <a routerLink="/cart-page">
+            Cart <span class="bg-red-600 text-white rounded-full py-1 px-2 text-base">3</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

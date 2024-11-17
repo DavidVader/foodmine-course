@@ -1,0 +1,22 @@
+<main>
+  <ul>
+    @for (food of foods; track $index) {
+    <li>
+      <a routerLink="/foods/{{food.id}}">
+        <img [src]="food.imageUrl" [alt]="food.name">
+        <div>
+          <div>
+            {{food.name}}
+          </div>
+          <span>
+
+          </span>
+          <div>
+            
+          </div>
+        </div>
+      </a>
+    </li>
+    }
+  </ul>
+</main>

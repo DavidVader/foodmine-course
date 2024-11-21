@@ -1,0 +1,4 @@
+<div class="flex justify-center mt-12 mb-6">
+  <input class="rounded-s-full h-12 w-80 p-5 text-base font-medium outline-none bg-gray-50" #s type="text" placeholder="Search Food Mine!" (keyup.enter)="search(s.value)" [value]="searchTerm">
+  <button class="text-white h-12 w-20 rounded-e-full bg-red-400 outline-none hover:bg-red-600" (click)="search(s.value)">Submit</button>
+</div>

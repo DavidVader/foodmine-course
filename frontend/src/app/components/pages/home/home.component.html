@@ -1,18 +1,40 @@
 <main>
-  <ul>
+  <app-search />
+  <ul class="flex flex-wrap items-center justify-center">
     @for (food of foods; track $index) {
     <li>
-      <a routerLink="/foods/{{food.id}}">
-        <img [src]="food.imageUrl" [alt]="food.name">
-        <div>
+      <a class="h-80 w-80 border border-gray-50 border-solid rounded-2xl m-2 flex overflow-hidden text-red-600 hover:text-red-400 flex-col"
+        routerLink="/foods/{{food.id}}">
+        <img class="hover:opacity-80" [src]="food.imageUrl" [alt]="food.name">
+        <div class="mt-1 py-2 px-4 relative h-28">
           <div>
             {{food.name}}
           </div>
-          <span>
-
-          </span>
-          <div>
-            
+          @if (!food.favorite) {
+          <span class="absolute top-2 right-4 text-xl text-gray-600">&#x2764;&#xfe0e;</span>
+          }@else {
+          <span class="absolute top-2 right-4 text-xl">&#x2764;&#xfe0e;</span>
+          }
+          <!-- Star Rating
+          <span></span>
+          -->
+          <div class="flex justify-between items-start">
+            <div class="flex: 9; ">
+              @for (origin of food.origins; track $index) {
+              <span class="rounded-full bg-gray-50 inline-block text-sm text-gray-600 mr-1 mt-1 px-2">
+                {{origin}}
+              </span>
+              }
+            </div>
+            <div class="flex: 3; text-sm text-center">
+              <span>&#8986;</span>
+              {{food.cookTime}}
+            </div>
+            <div class="padding-right: 100%; absolute bottom-0 left-4 pt-1 mt-3 text-gray-600 text-lg">
+              <span>
+                {{food.price | currency}}
+              </span>
+            </div>
           </div>
         </div>
       </a>

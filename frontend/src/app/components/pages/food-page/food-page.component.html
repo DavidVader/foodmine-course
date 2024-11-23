@@ -1,0 +1,39 @@
+<div class="flex flex-wrap justify-center items-center m-12 *:min-w-md *:max-w-2xl">
+  <img class="rounded-3xl flex-1 object-cover height:34rem; m-4" [src]="food.imageUrl" [alt]="food.name">
+  <div class="flex w-full flex-col flex-1 p-8 text-black ml-4">
+    <div class="flex justify-between">
+      <span class="font-semibold text-3xl">{{food.name}}</span>
+      @if (!food.favorite) {
+      <span class="text-4xl text-gray-600">&#x2764;&#xfe0e;</span>
+      }@else {
+      <span class="text-4xl text-red-600">&#x2764;&#xfe0e;</span>
+      }
+    </div>
+    <div>
+      <!-- StarRating -->
+    </div>
+    <div class="flex flex-wrap my-4">
+      @for (origin of food.origins; track $index) {
+      <span class="p-2 text-xl my-2 mr-2 rounded-full bg-blue-200">
+        {{origin}}
+      </span>
+      }
+    </div>
+    <div class="flex flex-wrap">
+      @for (tag of food.tags; track $index) {
+      <a class="bg-gray-200 py-1 px-2 m-1 rounded-full font-semibold text-blue-600" routerLink="/tag/{{tag}}">
+        {{tag}}<span class="text-blue-400"></span>
+      </a>
+      }
+    </div>
+    <div class="mt-4">
+      <span class="py-2 pr-8 rounded-full text-xl">Time to cook about <strong>{{food.cookTime}}</strong> minutes</span>
+    </div>
+    <div class="text-3xl my-8 mr-8 text-green-600 before:text-gray-800">
+      <span>
+        {{food.price | currency}}
+      </span>
+    </div>
+    <button class="text-white bg-red-600 hover:bg-red-400 outline rounded-full p-4 text-xl">Add To Cart</button>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+@if (tags) {
+<div class="flex flex-wrap justify-center">
+  @for (tag of tags; track $index) {
+  <a class="bg-gray-200 py-1 px-2 m-1 rounded-full font-semibold text-blue-600" routerLink="/tag/{{tag.name}}">
+    {{tag.name}}<span class="text-blue-400">({{tag.count}})</span>
+  </a>
+  }
+</div>
+}
